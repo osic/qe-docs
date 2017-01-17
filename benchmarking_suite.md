@@ -1,18 +1,18 @@
-#rally
+#Rally
 Artifacts related to running Rally scenarios. These scenarios are used as a benchmarking test suite. 
 They are executed using a shell script (executioner.sh) as a controller on the Jenkins Server webpage. 
 
-#suite flow
+#Suite Flow
 The variables IP, USER, PASSWORD, TENANT, RALLY_TASK, and RALLY_PARAS are first updated by the shell 
 script with the credentials from the existing workspace. The  scripts next step is to send the credentials, 
 RALLY_TASK, and the run_rally.sh shell script up to the rally box. The results are stored into the workspace. 
 Any leftover logs from previous runs are deleted and the logs from openstack & rally are compressed and uploaded 
 to files. Each newly created file is then parsed and uploaded to elastic search.
 
-#existing.json 
+#Existing.json 
 File used to specify and pass the cloud type, auth-url, region_name, endpoint_type, and admin credentials for each rally task.
 
-#osic-glance-cinder-nova.json
+#Osic-glance-cinder-nova.json
 Rally task used to test different scenarios for glance, cinder and nova. This file test:   
 
      *	NovaServers.boot_and_delete_server - test if nova can boot and delete 1 server.   
@@ -25,21 +25,26 @@ Rally task used to test different scenarios for glance, cinder and nova. This fi
 
 Parameters: Flavor_name, image_name, volume_type, volume_size, new_volume_size, and iterations.
 
-#osic-keystone-prime-scenario.json:
+#Osic-keystone-prime-scenario.json:
 KeystoneBasic.authenticate_user_and_validate_token - Rally task used to authenticate 1 user and token to prime for the osic-keystone-scenario.
 
-#osic-keystone-scenarion.json
+#Osic-keystone-scenarion.json
 KeystoneBasic.authenticate_user_and_validate_token - Rally task used to authenticate 20 users and validate their tokens.
 
-#osic-nova-1-server-scenario.json
+#Osic-nova-1-server-scenario.json
 NovaServers.boot_server - Rally task used to boot 1 server to prime for the n-server-scenario. 
 
 Parameters: flavor_name.
 
-#osic-nova-n-server-scenario.json
+#Osic-nova-n-server-scenario.json
 NovaServers.boot_server - Rally task used to boot a specified number of servers.
 
 Parameters: flavor_name, servers_to_build
 
-#run_rally.sh
+#Run_rally.sh
 Used to initialize rally database, create a rally deployment, and start the rally task.
+
+
+#To Do
+Add additional scenarios and desciptions for the test suite as needed.
+Adjust scenarios (if necessary) for transistion into jenkins pipeline.
