@@ -9,6 +9,6 @@ Who's who in the OSIC QE world.
 | Joshua White      | jlwhite   | joshua.l.white@intel.com   |
 | Kurtis Cobb       | kvcobb    | kurtis.v.cobb@intel.com    |
 | Luz Cazares       | luzC      | luz.cazares@intel.com      |
-| Sabeen Syed       |           | sabeen.syed@rackspace.com  |
-| Sandra Haron      |           | sandra.haron@intel.com     |
+| Sabeen Syed       | sabeen    | sabeen.syed@rackspace.com  |
+| Sandra Haron      | Sandra    | sandra.haron@intel.com     |
 | Steve Heyman      | hockeynut | steve.heyman@rackspace.com |
