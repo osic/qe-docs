@@ -8,6 +8,7 @@ Please use this file as an index into this repo so folks can quickly see what's 
 - persistent resources testing https://github.com/osic/qe-docs/blob/master/OpenStack%20Persistent%20Resources%20Testing.pdf
 - benchmarking suite https://github.com/osic/qe-docs/blob/master/benchmarking_suite.md
 - list of etherpads https://github.com/osic/qe-docs/blob/master/etherpads
+- testcase locations https://github.com/osic/qe-docs/blob/master/test_locations.md
 
 
 On a related note, The OSIC Cheat Sheet should be the starting point for all things OSIC.
