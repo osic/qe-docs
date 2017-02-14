@@ -1,0 +1,41 @@
+A quick how to for getting started with Tempest in OSA. 
+
+=================================
+INSTALLING TEMPEST WITH OSA
+=================================
+
+Login to your deploy node and navigate to your openstack ansible git repository.
+
+cd /opt/openstack-ansible
+
+Once within the openstack ansible repository, run the below command to install tempest to the utility containers on the infra
+boxes.
+
+openstack-ansible playbooks/os-tempest.yml
+
+=================================
+RUNNING TEMPEST SMOKE TESTS
+=================================
+
+Login to your infra01 machine from the deploy node.
+
+ssh infra01
+
+Then proceed to attach your self to the OSA imlemented utility container.
+
+lxc-attach -n infra01_utility*
+
+The OSA playbook for installing tempest will have placed your tempest installtion in /opt/tempest_untagged, so proceed to cd 
+into that directory.
+
+cd /opt/tempest_untagged
+
+Source the tempest environment.
+
+source bin/activate
+
+Run the smoke tests.  use the --regex command to filter for tests labelled as "smoke"  You can run all the tests by not
+specifying the --regex flag or run 1 test by placing the entire test name into the --regex flag. 
+
+ostestr --regex "smoke"
+
