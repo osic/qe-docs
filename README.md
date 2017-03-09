@@ -10,6 +10,7 @@ Please use this file as an index into this repo so folks can quickly see what's 
 - Overview of benchmarking suite ... https://github.com/osic/qe-docs/blob/master/benchmarking_suite.md
 - List of etherpads ... https://github.com/osic/qe-docs/blob/master/etherpads 
 - Testcase locations ... https://github.com/osic/qe-docs/blob/master/test_locations.md
+- Upgrade Test Tool ... https://github.com/osic/qe-docs/blob/master/upgrade_test_tool_reqs.rst
 
 
 On a related note, The OSIC Cheat Sheet should be the starting point for all things OSIC.
