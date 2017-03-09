@@ -76,12 +76,12 @@ Main modules
 - Data store
 - Data parser
 - Test manager
-- Release version validator* (Lower priority)
+- Release version validator* (Low priority)
 - System health validator
 - Persistent resources validator
 - API uptime monitor
 - Service availability monitor
 - Service performance monitor
-- External tests plugin system
+- External tests plugin system* (Low priority)
 - Deployment control interface 
 - Report generator
