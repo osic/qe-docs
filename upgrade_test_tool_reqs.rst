@@ -66,3 +66,22 @@ Won't have
   Requirements labeled as Won't have have been agreed by stakeholders as the least-critical, lowest-payback items, or not appropriate 
   at that time. As a result, 'Won't have' requirements are not planned into the schedule for the delivery timebox. 'Won't have' 
   requirements are either dropped or reconsidered for inclusion in later timeboxes.
+  
+|
+
+============
+Main modules
+============
+
+- Data store
+- Data parser
+- Test manager
+- Release version validator* (Lower priority)
+- System health validator
+- Persistent resources validator
+- API uptime monitor
+- Service availability monitor
+- Service performance monitor
+- External tests plugin system
+- Deployment control interface 
+- Report generator
