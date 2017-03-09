@@ -36,14 +36,13 @@ Requirements
 - *Must* be compatible with Linux environments
 - *Should* be an official OpenStack project
 
-|
-
 **Supported Services**
 
 - Authentication
 - Compute
 - Object Storage
 
+|
 
 =====================
 Requirements priority
