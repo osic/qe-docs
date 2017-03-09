@@ -16,36 +16,34 @@ Requirements
 **Functional**
 
 - The tool *must* be agnostic to the OpenStack environment and the deployment tool used, performing actions consistently across different environments
-- It could validate that after an upgrade, services are actually at the correct release version
-- It must validate that after an upgrade, all services are still functional
-- It must validate that existing resources, like VMs or volumes, are not affected by the upgrade
-- It must be capable of measuring if there is API downtime during the upgrade for any of the following services:
-   - Compute
-   - Authentication
-   - Object Storage
-- It should verify that all requests made during an upgrade are honored at some point successfully, validating that they are not just added to the queue but are actually processed at some point
-- It must be capable to detect if any of the service below is not fully available at some point during the upgrade:
-   - Compute
-   - Authentication
-   - Object Storage
-- It must be capable of measuring the performance of the services listed below, before, during, and after an upgrade:
-   - Compute
-   - Authentication
-   - Object Storage
-- It must have a centralized store for logs of tests and data collected during an upgrade
-- It must attempt to clean up after itself, if resources were created for testing or monitoring purposes they must be removed after the upgrade finishes 
-- It must be scalable in services meaning that when new services are ready to implement an upgrade strategy (for example zero downtime or zero impact), they can be easily added to the scope of the tool
-- It could include a GUI where results can be easily interpreted and should include trends
-- It must provide a common public interface that can be used to communicate with and from deployment tools so certain steps of the deployment or the upgrade can be triggered
-- It could provide the capability to add tests via a plugin system 
+- It *could* validate that after an upgrade, services are actually at the correct release version
+- It *must* validate that after an upgrade, all services are still functional
+- It *must* validate that existing resources, like VMs or volumes, are not affected by the upgrade
+- It *must* be capable of measuring if there is API downtime during the upgrade for any of the supported services listed below
+- It *should* verify that all requests made during an upgrade are honored at some point successfully, validating that they are not just added to the queue but are actually processed at some point
+- It *must* be capable to detect if any of the supported services listed below is not fully available at some point during the upgrade
+- It *must* be capable of measuring the performance of the supported services listed below, before, during, and after an upgrade
+- It *must* have a centralized store for logs of tests and data collected during an upgrade
+- It *must* attempt to clean up after itself, if resources were created for testing or monitoring purposes they must be removed after the upgrade finishes 
+- It *must* be scalable in services meaning that when new services are ready to implement an upgrade strategy (for example zero downtime or zero impact), they can be easily added to the scope of the tool
+- It *could* include a GUI where results can be easily interpreted and should include trends
+- It *must* provide a common public interface that can be used to communicate with and from deployment tools so certain steps of the deployment or the upgrade can be triggered
+- It *could* provide the capability to add tests via a plugin system 
 
 **Non-Functional**
 
-- Must be python 3 compatible
-- Must be compatible with Linux environments
-- Should be an official OpenStack project
+- *Must* be python 3 compatible
+- *Must* be compatible with Linux environments
+- *Should* be an official OpenStack project
 
 |
+
+**Supported Services**
+
+- Authentication
+- Compute
+- Object Storage
+
 
 =====================
 Requirements priority
