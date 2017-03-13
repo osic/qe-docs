@@ -23,7 +23,7 @@ Requirements
 9. It *must* be capable of measuring the performance of the `supported services`_ listed below during a specified period of time
 10. It *must* have a centralized store for logs of tests and data collected
 11. It *must* attempt to clean up after itself, if resources were created for testing or monitoring purposes they must be removed after they are no longer needed 
-12. It *must* be plugable in services meaning that when new services are ready to implement an upgrade strategy (for example zero downtime or zero impact), they can be easily added to the scope of the tool
+12. It *must* be pluggable in services meaning that when new services are ready to implement an upgrade strategy (for example zero downtime or zero impact), they can be easily added to the scope of the tool
 13. It *could* include a GUI where results can be easily interpreted and *could* include trends
 14. It *must* provide a common public interface that others can use to consume the toolset 
 15. It *must* provide a common public interface that the toolset can use to communicate with  deployment tools so certain steps of the deployment or the upgrade can be triggered
