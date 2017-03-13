@@ -92,4 +92,12 @@ Main modules
 
 |
 
+=======
+Diagram
+=======
 
+The following image shows a simplified diagram of the architecture of the tool, it does not include all the interaction between modules. 
+
+.. image:: images/upgrade_test_tool_architecture_v2.0.jpg
+    :align: center
+    :alt: Upgrade Test Tool
