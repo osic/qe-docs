@@ -2,7 +2,7 @@
 Description
 ===========
 
-Toolset for testing an OpenStack environment before, during, and after an upgrade process. The toolset answers the question "how does OpenStack behaves across upgrades from one release N to a release N+1, or from the latest official release to master?". It also provides information that can be used to assess if an upgrade complies with the requirements for being recognized as a **rolling upgrade**, a **zero downtime upgrade** or a **zero impact upgrade**. 
+Toolset for testing an OpenStack environment before, during, and after an upgrade process. The toolset answers the question "how does OpenStack behave across upgrades from release N to release N+1, or from the latest official release to master?". It also provides information that can be used to assess if an upgrade complies with the requirements for being recognized as a **rolling upgrade**, a **zero downtime upgrade** or a **zero impact upgrade**. 
 
 |
 
@@ -12,10 +12,10 @@ Requirements
 
 **Functional**
 
-1. The tool *must* be agnostic to the OpenStack environment and the deployment tool used, performing actions consistently across different environments
+1. The tool *must* be agnostic to the OpenStack environment and to the deployment tool used, performing actions consistently across different environments
 2. It *should* auto discover cloud services and configure the tool accordingly 
-3. It *must* validate that services are actually at the correct release version at a given time
-4. It *must* validate that  all services are functional at an given time (e.g. before and after an upgrade)
+3. It *must* validate that services are actually at the correct release version at any given time
+4. It *must* validate that  all services are functional at any given time (e.g. before and after an upgrade)
 5. It *must* provide a way of creating and validating persistent resources, like VMs or volumes, at any given time
 6. It *must* be capable of measuring if there is API downtime during a specified period of time for any of the `supported services`_ listed below
 7. It *should* verify that all requests made during an upgrade are honored at some point successfully, validating that they are not just added to the queue but are actually processed at some point
