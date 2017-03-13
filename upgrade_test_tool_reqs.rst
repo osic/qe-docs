@@ -2,10 +2,7 @@
 Description
 ===========
 
-Tool for testing upgrades of the OpenStack software. The tool validates if an OpenStack deployment can perform an upgrade of its services 
-from one release N-1 to a release N successfully, or from the latest official release to master. It also provides information that can be 
-used to assess if an upgrade complies with the requirements for being recognized as a **rolling upgrade**, a **zero downtime upgrade** or a 
-**zero impact upgrade**.
+Toolset for testing an OpenStack environment before, during, and after an upgrade process. The toolset answers the question "how does OpenStack behaves across upgrades from one release N to a release N+1, or from the latest official release to master?". It also provides information that can be used to assess if an upgrade complies with the requirements for being recognized as a **rolling upgrade**, a **zero downtime upgrade** or a **zero impact upgrade**. 
 
 |
 
@@ -15,20 +12,24 @@ Requirements
 
 **Functional**
 
-- The tool *must* be agnostic to the OpenStack environment and the deployment tool used, performing actions consistently across different environments
-- It *could* validate that after an upgrade, services are actually at the correct release version
-- It *must* validate that after an upgrade, all services are still functional
-- It *must* validate that existing resources, like VMs or volumes, are not affected by the upgrade
-- It *must* be capable of measuring if there is API downtime during the upgrade for any of the supported services listed below
-- It *should* verify that all requests made during an upgrade are honored at some point successfully, validating that they are not just added to the queue but are actually processed at some point
-- It *must* be capable to detect if any of the supported services listed below is not fully available at some point during the upgrade
-- It *must* be capable of measuring the performance of the supported services listed below, before, during, and after an upgrade
-- It *must* have a centralized store for logs of tests and data collected during an upgrade
-- It *must* attempt to clean up after itself, if resources were created for testing or monitoring purposes they must be removed after the upgrade finishes 
-- It *must* be scalable in services meaning that when new services are ready to implement an upgrade strategy (for example zero downtime or zero impact), they can be easily added to the scope of the tool
-- It *could* include a GUI where results can be easily interpreted and should include trends
-- It *must* provide a common public interface that can be used to communicate with and from deployment tools so certain steps of the deployment or the upgrade can be triggered
-- It *could* provide the capability to add tests via a plugin system 
+1. The tool *must* be agnostic to the OpenStack environment and the deployment tool used, performing actions consistently across different environments
+2. It *should* auto discover cloud services and configure the tool accordingly 
+3. It *must* validate that services are actually at the correct release version at a given time
+4. It *must* validate that  all services are functional at an given time (e.g. before and after an upgrade)
+5. It *must* provide a way of creating and validating persistent resources, like VMs or volumes, at any given time
+6. It *must* be capable of measuring if there is API downtime during a specified period of time for any of the `supported services`_ listed below
+7. It *should* verify that all requests made during an upgrade are honored at some point successfully, validating that they are not just added to the queue but are actually processed at some point
+8. It *must* be capable to detect if all the `supported services`_ listed below are fully available continuously during a specified period of time
+9. It *must* be capable of measuring the performance of the `supported services`_ listed below during a specified period of time
+10. It *must* have a centralized store for logs of tests and data collected
+11. It *must* attempt to clean up after itself, if resources were created for testing or monitoring purposes they must be removed after they are no longer needed 
+12. It *must* be plugable in services meaning that when new services are ready to implement an upgrade strategy (for example zero downtime or zero impact), they can be easily added to the scope of the tool
+13. It *could* include a GUI where results can be easily interpreted and *could* include trends
+14. It *must* provide a common public interface that others can use to consume the toolset 
+15. It *must* provide a common public interface that the toolset can use to communicate with  deployment tools so certain steps of the deployment or the upgrade can be triggered
+16. It *should* provide the capability to add tests via a plugin system 
+17. In case of cascade errors the tool *must* stop actions like creating resources that would lead to an even more unstable environment, attempt to clean up and report back
+18. It *must* run tests using non-admin OpenStack user(s) 
 
 **Non-Functional**
 
@@ -36,11 +37,13 @@ Requirements
 - *Must* be compatible with Linux environments
 - *Should* be an official OpenStack project
 
-**Supported Services**
+Supported Services
+==================
 
-- Authentication
+- Identity
 - Compute
 - Object Storage
+- Block Storage
 
 |
 
@@ -74,14 +77,19 @@ Main modules
 ============
 
 - Data store
-- Data parser
 - Test manager
-- Release version validator* (Low priority)
+- Release version validator
 - System health validator
 - Persistent resources validator
 - API uptime monitor
 - Service availability monitor
 - Service performance monitor
-- External tests plugin system* (Low priority)
+- External tests plugin system* (Lower priority)
 - Deployment control interface 
 - Report generator
+- Data parser
+- Configuration manager
+
+|
+
+
