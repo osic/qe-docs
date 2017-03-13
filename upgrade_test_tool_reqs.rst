@@ -81,9 +81,9 @@ Main modules
 - Release version validator
 - System health validator
 - Persistent resources validator
-- API uptime monitor
-- Service availability monitor
-- Service performance monitor
+- API uptime watcher
+- Service availability watcher
+- Service performance watcher
 - External tests plugin system* (Lower priority)
 - Deployment control interface 
 - Report generator
