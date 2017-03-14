@@ -2,7 +2,7 @@
 Description
 ===========
 
-Toolset for testing an OpenStack environment before, during, and after an upgrade process. The toolset answers the question "how does OpenStack behave across upgrades from release N to release N+1, or from the latest official release to master?". It also provides information that can be used to assess if an upgrade complies with the requirements for being recognized as a **rolling upgrade**, a **zero downtime upgrade** or a **zero impact upgrade**. 
+This document proposes a set of requirements for a toolset for testing an OpenStack environment before, during, and after an upgrade process. The toolset answers the question "how does OpenStack behave across upgrades from release N to release N+1, or from the latest official release to master?". It also provides information that can be used to assess if an upgrade complies with the requirements for being recognized as a **rolling upgrade**, a **zero downtime upgrade** or a **zero impact upgrade**. 
 
 |
 
@@ -18,8 +18,8 @@ Requirements
 4. It *must* validate that  all services are functional at any given time (e.g. before and after an upgrade)
 5. It *must* provide a way of creating and validating persistent resources, like VMs or volumes, at any given time
 6. It *must* be capable of measuring if there is API downtime during a specified period of time for any of the `supported services`_ listed below
-7. It *should* verify that all requests made during an upgrade are honored at some point successfully, validating that they are not just added to the queue but are actually processed at some point
-8. It *must* be capable to detect if all the `supported services`_ listed below are fully available continuously during a specified period of time
+7. It *should* verify that all requests made during an upgrade are honored at some point successfully, validating that they are not just added to a queue but are actually processed
+8. It *must* be capable to detect if all of the `supported services`_ listed below are fully available continuously during a specified period of time
 9. It *must* be capable of measuring the performance of the `supported services`_ listed below during a specified period of time
 10. It *must* have a centralized store for logs of tests and data collected
 11. It *must* attempt to clean up after itself, if resources were created for testing or monitoring purposes they must be removed after they are no longer needed 
@@ -27,9 +27,10 @@ Requirements
 13. It *could* include a GUI where results can be easily interpreted and *could* include trends
 14. It *must* provide a common public interface that others can use to consume the toolset 
 15. It *must* provide a common public interface that the toolset can use to communicate with  deployment tools so certain steps of the deployment or the upgrade can be triggered
-16. It *should* provide the capability to add tests via a plugin system 
-17. In case of cascade errors the tool *must* stop actions like creating resources that would lead to an even more unstable environment, attempt to clean up and report back
-18. It *must* run tests using non-admin OpenStack user(s) 
+16. It *should* provide the capability to add tests via a plugin system
+17. It *should* use existing test discovery and plugin mechanisms to allow maximum reuse of test resources from existing OpenStack test tools 
+18. In case of cascading errors the tool *must* stop actions like creating resources that would lead to an even more unstable environment, attempt to clean up and report back
+19. It *must* run tests using non-admin OpenStack user(s) 
 
 **Non-Functional**
 
@@ -96,8 +97,8 @@ Main modules
 Diagram
 =======
 
-The following image shows a simplified diagram of the architecture of the tool, it does not include all the interaction between modules. 
+The following image shows a simplified diagram of the architecture of the toolset, it does not include all of the interactions between modules. 
 
 .. image:: images/upgrade_test_tool_architecture_v2.0.jpg
     :align: center
-    :alt: Upgrade Test Tool
+    :alt: Upgrade Test Toolset
