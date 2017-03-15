@@ -13,37 +13,39 @@ Requirements
 **Functional**
 
 1. The tool *must* be agnostic to the OpenStack environment and to the deployment tool used, performing actions consistently across different environments
-2. It *should* auto discover cloud services and configure the tool accordingly 
-3. It *must* validate that services are actually at the correct release version at any given time
-4. It *must* validate that  all services are functional at any given time (e.g. before and after an upgrade)
-5. It *must* provide a way of creating and validating persistent resources, like VMs or volumes, at any given time
-6. It *must* be capable of measuring if there is API downtime during a specified period of time for any of the `supported services`_ listed below
-7. It *should* verify that all requests made during an upgrade are honored at some point successfully, validating that they are not just added to the queue but are actually processed at some point
-8. It *must* be capable to detect if all the `supported services`_ listed below are fully available continuously during a specified period of time
-9. It *must* be capable of measuring the performance of the `supported services`_ listed below during a specified period of time
-10. It *must* have a centralized store for logs of tests and data collected
-11. It *must* attempt to clean up after itself, if resources were created for testing or monitoring purposes they must be removed after they are no longer needed 
-12. It *must* be pluggable in services meaning that when new services are ready to implement an upgrade strategy (for example zero downtime or zero impact), they can be easily added to the scope of the tool
-13. It *could* include a GUI where results can be easily interpreted and *could* include trends
-14. It *must* provide a common public interface that others can use to consume the toolset 
-15. It *must* provide a common public interface that the toolset can use to communicate with  deployment tools so certain steps of the deployment or the upgrade can be triggered
-16. It *should* provide the capability to add tests via a plugin system 
-17. In case of cascade errors the tool *must* stop actions like creating resources that would lead to an even more unstable environment, attempt to clean up and report back
-18. It *must* run tests using non-admin OpenStack user(s) 
+2. It *must* validate that services are actually at the correct release version at any given time
+3. It *must* validate that  all services are functional at any given time (e.g. before and after an upgrade)
+4. It *must* provide a way of creating and validating persistent resources, like VMs or volumes, at any given time
+5. It *must* be capable of measuring if there is API downtime during a specified period of time for any of the `supported services`_ listed below
+6. It *must* be capable to detect if all of the `supported services`_ listed below are fully available continuously during a specified period of time
+7. It *must* be capable of measuring the performance of the `supported services`_ listed below during a specified period of time
+8. It *must* have a centralized store for logs of tests and data collected
+9. It *must* attempt to clean up after itself, if resources were created for testing or monitoring purposes they must be removed after they are no longer needed 
+10. It *must* be pluggable in services meaning that when new services are ready to implement an upgrade strategy (for example zero downtime or zero impact), they can be easily added to the scope of the tool
+11. It *must* provide a common public interface that others can use to consume the toolset 
+12. It *must* provide a common public interface that the toolset can use to communicate with  deployment tools so certain steps of the deployment or the upgrade can be triggered
+13. In case of cascade errors the tool *must* stop actions like creating resources that would lead to an even more unstable environment, attempt to clean up and report back
+14. It *must* run tests using non-admin OpenStack user(s) 
+15. It *should* auto discover cloud services and configure the tool accordingly 
+16. It *should* verify that all requests made during an upgrade are honored at some point successfully, validating that they are not just added to a queue but are actually processed
+17. It *should* provide the capability to add tests via a plugin system 
+18. It *should* use existing test discovery and plugin mechanisms to allow maximum reuse of test resources from existing OpenStack test tools
+19. It *could* include a GUI where results can be easily interpreted and *could* include trends
+20. It *could* be capable of verifying if the data plane is accesible during a specified period of time 
 
 **Non-Functional**
 
-- *Must* be python 3 compatible
-- *Must* be compatible with Linux environments
-- *Should* be an official OpenStack project
+21. *Must* be python 3 compatible
+22. *Must* be compatible with Linux environments
+23. *Should* be an official OpenStack project
 
 Supported Services
 ==================
 
-- Identity
-- Compute
-- Object Storage
-- Block Storage
+- Identity (Keystone)
+- Compute (Nova)
+- Object Storage (Swift)
+- Block Storage (Cinder)
 
 |
 
@@ -78,12 +80,12 @@ Main modules
 
 - Data store
 - Test manager
-- Release version validator
+- Release version validator (Note: this could also be an observer)
 - System health validator
 - Persistent resources validator
-- API uptime watcher
-- Service availability watcher
-- Service performance watcher
+- API uptime observer
+- Service availability observer
+- Service performance observer
 - External tests plugin system* (Lower priority)
 - Deployment control interface 
 - Report generator
@@ -96,8 +98,8 @@ Main modules
 Diagram
 =======
 
-The following image shows a simplified diagram of the architecture of the tool, it does not include all the interaction between modules. 
+The following image shows a simplified diagram of the architecture of the toolset, it does not include all of the interactions between modules. 
 
 .. image:: images/upgrade_test_tool_architecture_v2.0.jpg
     :align: center
-    :alt: Upgrade Test Tool
+    :alt: Upgrade Test Toolset
