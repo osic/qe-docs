@@ -2,7 +2,7 @@
 Description
 ===========
 
-Toolset for testing an OpenStack environment before, during, and after an upgrade process. The toolset answers the question "how does OpenStack behave across upgrades from release N to release N+1, or from the latest official release to master?". It also provides information that can be used to assess if an upgrade complies with the requirements for being recognized as a **rolling upgrade**, a **zero downtime upgrade** or a **zero impact upgrade**. 
+Toolset for testing an OpenStack environment before, during, and after an upgrade process. The toolset answers the question "how does OpenStack behave across upgrades from release N to release N+1, or from the latest official release to master?". It also provides information that can be used to assess if an upgrade complies with the requirements for being recognized as a **`rolling upgrade`_**, a **`zero downtime upgrade`_** or a **`zero impact upgrade`_**. 
 
 |
 
@@ -12,13 +12,13 @@ Requirements
 
 **Functional**
 
-1. The tool *must* be agnostic to the OpenStack environment and to the deployment tool used, performing actions consistently across different environments
+1. The tool *should* be agnostic to the OpenStack environment and to the deployment tool used, performing actions consistently across different environments
 2. It *must* validate that services are actually at the correct release version at any given time
-3. It *must* validate that  all services are functional at any given time (e.g. before and after an upgrade)
+3. It *must* validate that all services are functional at any given time (e.g. before, during and after an upgrade)
 4. It *must* provide a way of creating and validating persistent resources, like VMs or volumes, at any given time
 5. It *must* be capable of measuring if there is API downtime during a specified period of time for any of the `supported services`_ listed below
 6. It *must* be capable to detect if all of the `supported services`_ listed below are fully available continuously during a specified period of time
-7. It *must* be capable of measuring the performance of the `supported services`_ listed below during a specified period of time
+7. It *should* be capable of measuring the performance of the `supported services`_ listed below during a specified period of time
 8. It *must* have a centralized store for logs of tests and data collected
 9. It *must* attempt to clean up after itself, if resources were created for testing or monitoring purposes they must be removed after they are no longer needed 
 10. It *must* be pluggable in services meaning that when new services are ready to implement an upgrade strategy (for example zero downtime or zero impact), they can be easily added to the scope of the tool
@@ -31,7 +31,8 @@ Requirements
 17. It *should* provide the capability to add tests via a plugin system 
 18. It *should* use existing test discovery and plugin mechanisms to allow maximum reuse of test resources from existing OpenStack test tools
 19. It *could* include a GUI where results can be easily interpreted and *could* include trends
-20. It *could* be capable of verifying if the data plane is accesible during a specified period of time 
+20. It *could* be capable of verifying if the data plane is accesible during a specified period of time
+21. It *should* be capable of performing tests on one of the `supported services`_ at a time
 
 **Non-Functional**
 
@@ -46,8 +47,9 @@ Supported Services
 - Compute (Nova)
 - Object Storage (Swift)
 - Block Storage (Cinder)
+- Image (Glance)
+- Networking (Neutron)
 
-|
 
 =====================
 Requirements priority
@@ -103,3 +105,7 @@ The following image shows a simplified diagram of the architecture of the toolse
 .. image:: images/upgrade_test_tool_architecture_v2.0.jpg
     :align: center
     :alt: Upgrade Test Toolset
+    
+.. _rolling upgrade: https://governance.openstack.org/tc/reference/tags/assert_supports-rolling-upgrade.html
+.. _zero downtime upgrade: https://governance.openstack.org/tc/reference/tags/assert_supports-zero-downtime-upgrade.html
+.. _zero impact upgrade: https://governance.openstack.org/tc/reference/tags/assert_supports-zero-impact-upgrade.html
