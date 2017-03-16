@@ -16,4 +16,3 @@ Please use this file as an index into this repo so folks can quickly see what's 
 On a related note, The OSIC Cheat Sheet should be the starting point for all things OSIC.
 
 https://docs.google.com/document/d/13zNFkfhhG11CJhuvA8yRP52ia9HvoUAEzFMoADmpgW0/edit
-#Test please delete me
