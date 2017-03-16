@@ -2,7 +2,7 @@
 Description
 ===========
 
-Toolset for testing an OpenStack environment before, during, and after an upgrade process. The toolset answers the question "how does OpenStack behave across upgrades from release N to release N+1, or from the latest official release to master?". It also provides information that can be used to assess if an upgrade complies with the requirements for being recognized as a **`rolling upgrade`_**, a **`zero downtime upgrade`_** or a **`zero impact upgrade`_**. 
+Toolset for testing an OpenStack environment before, during, and after an upgrade process. The toolset answers the question "how does OpenStack behave across upgrades from release N to release N+1, or from the latest official release to master?". It also provides information that can be used to assess if an upgrade complies with the requirements for being recognized as a `rolling upgrade`_, a `zero downtime upgrade`_ or a `zero impact upgrade`_. 
 
 |
 
