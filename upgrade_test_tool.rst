@@ -102,7 +102,7 @@ Diagram
 
 The following image shows a simplified diagram of the architecture of the toolset, it does not include all of the interactions between modules. 
 
-.. image:: images/upgrade_test_tool_architecture_v2.0.jpg
+.. image:: images/upgrade_test_tool_architecture_v2.1.jpg
     :align: center
     :alt: Upgrade Test Toolset
     
