@@ -33,6 +33,24 @@
       "revId": "9767aaba2f86761b0f973fa83cdd11eb5767fca6",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d310c4f6_f8c20b9f",
+        "filename": "upgrade_test_tool.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1010706
+      },
+      "writtenOn": "2017-03-22T15:12:19Z",
+      "side": 1,
+      "message": "Yes, this is a little confusing to me too, I had started with a list of only 3 projects, Keystone, Nova and Swift,my plan was to add the projects to that list only after they were ready for the upgrade strategies. But then Kenny added the other two (Glance and Neutron), so I discussed this with Luz and she mentioned that Glance may be ready for this too, but we know Neutron isn\u0027t, but since Kenny added it we decided to leave it but adding a note with the disclaimer.",
+      "parentUuid": "a0b48f3f_69819549",
+      "revId": "9767aaba2f86761b0f973fa83cdd11eb5767fca6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     }
   ]
 }
