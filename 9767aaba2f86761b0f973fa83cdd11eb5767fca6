@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "10492c07_0bcaa0c0",
+        "filename": "upgrade_test_tool.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1010733
+      },
+      "writtenOn": "2017-03-22T15:03:45Z",
+      "side": 1,
+      "message": ";)",
+      "revId": "9767aaba2f86761b0f973fa83cdd11eb5767fca6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a0b48f3f_69819549",
+        "filename": "upgrade_test_tool.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1010733
+      },
+      "writtenOn": "2017-03-22T15:03:45Z",
+      "side": 1,
+      "message": "If Neutron is being marked as *When available*, should other services be marked that way as well? Or noted additional services to be added as available?",
+      "revId": "9767aaba2f86761b0f973fa83cdd11eb5767fca6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
