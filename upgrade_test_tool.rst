@@ -37,9 +37,9 @@ Requirements
 
 **Non-Functional**
 
-21. *Must* be python 3 compatible
-22. *Must* be compatible with Linux environments
-23. *Must* be an official OpenStack project
+22. *Must* be python 3 compatible
+23. *Must* be compatible with Linux environments
+24. *Must* be an official OpenStack project
 
 Supported Services
 ==================
