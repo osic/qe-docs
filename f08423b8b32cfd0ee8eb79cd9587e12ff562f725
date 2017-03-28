@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d01b6453_631451cf",
+        "filename": "upgrade_test_tool.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1010733
+      },
+      "writtenOn": "2017-03-28T16:37:25Z",
+      "side": 1,
+      "message": "What is the difference between being \"under the OpenStack namespace and under the QA umbrella\" and being an official project?\n\nIs that meeting the requirements of being an official project without being an official project?",
+      "revId": "f08423b8b32cfd0ee8eb79cd9587e12ff562f725",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
