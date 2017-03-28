@@ -16,6 +16,24 @@
       "revId": "f08423b8b32cfd0ee8eb79cd9587e12ff562f725",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c5909919_d98dec40",
+        "filename": "upgrade_test_tool.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1010706
+      },
+      "writtenOn": "2017-03-28T18:34:46Z",
+      "side": 1,
+      "message": "Being an official OpenStack project has many implications, and you need to comply with a lot of requirements to be able to apply to be an OpenStack official project. You can create a project with the OpenStack namespace in GitHub even if you are not an official project, so our project would still be  something like https://github.com/openstack/sherpa, but we don\u0027t necessarily have to look for the approval from the OpenStack TC to start working. The idea of being under the QA umbrella means that the OpenStack QA team recognizes the Sherpa project as a qa project, which means that they support it, that way it would be easier for us to get contributors (and interest in general) without having to be an official project.\nAll this doesn\u0027t mean we never want to be an official project, it means we can start without being an official project and at some point we can become official.",
+      "parentUuid": "d01b6453_631451cf",
+      "revId": "f08423b8b32cfd0ee8eb79cd9587e12ff562f725",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     }
   ]
 }
