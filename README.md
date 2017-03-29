@@ -8,7 +8,7 @@ Please use this file as an index into this repo so folks can quickly see what's 
 - Multi-node devstack deployment notes ... https://github.com/osic/qe-docs/blob/master/Deploying%20a%20Multi-Node%20Devstack%20Environment.pdf
 - OpenStack persistent resources testing ... https://github.com/osic/qe-docs/blob/master/OpenStack%20Persistent%20Resources%20Testing.pdf
 - Overview of benchmarking suite ... https://github.com/osic/qe-docs/blob/master/benchmarking_suite.md
-- List of etherpads ... https://github.com/osic/qe-docs/blob/master/etherpads 
+- List of etherpads ... https://github.com/osic/etherpads/blob/master/qe 
 - Testcase locations ... https://github.com/osic/qe-docs/blob/master/test_locations.md
 - Upgrade Test Tool ... https://github.com/osic/qe-docs/blob/master/upgrade_test_tool.rst
 
